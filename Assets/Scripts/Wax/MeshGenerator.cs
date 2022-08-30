@@ -97,9 +97,8 @@ public class MeshGenerator : MonoBehaviour
                     {
                         float complateRatio = GetComplateRatio();
                         
-                        if (complateRatio>0.22f)
+                        if (complateRatio>0.30f)
                         {
-                            Debug.Log("Win");
                             eventManager.CallFirstStageComplatedEvent();
                         }
 

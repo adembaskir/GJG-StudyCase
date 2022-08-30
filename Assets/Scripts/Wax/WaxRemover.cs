@@ -60,7 +60,7 @@ public class WaxRemover : MonoBehaviour
     }
     private void CheckIsRemoved()
     {
-        if (rotationValue <= -90)
+        if (rotationValue <= -60)
         {
             
             canDetect = false;

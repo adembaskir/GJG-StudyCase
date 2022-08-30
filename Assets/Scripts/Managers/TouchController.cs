@@ -16,6 +16,7 @@ public class TouchController : MonoBehaviour
     public UnityEvent onEndTouchEvent;
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         if (Instance != null)
         {
             Destroy(this);
