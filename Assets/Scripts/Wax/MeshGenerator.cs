@@ -39,7 +39,10 @@ public class MeshGenerator : MonoBehaviour
     }
     private void Update()
     {
-       
+        CheckMesh();
+    }
+    public void CheckMesh()
+    {
         if (Input.GetMouseButton(0))
         {
             if (maxDistanceForVertex < 250)
@@ -51,18 +54,10 @@ public class MeshGenerator : MonoBehaviour
         {
             maxDistanceForVertex = maxDistanceConstant;
             deformingMesh.RecalculateNormals();
-            
+
         }
     }
-    public void DetectUpperSideOfMesh()
-    {
-        Mesh upperSideMesh = new Mesh();
-        upperSideMesh.vertices = upperSideVertices.ToArray();
-        upperSideMesh.triangles = deformingMesh.triangles;
-        upperSideMesh.RecalculateBounds();
-        upperSideMesh.RecalculateNormals();
-        GetComponent<MeshFilter>().mesh = upperSideMesh;
-    }
+   
     private float GetComplateRatio()
     {
         return (float)selectedVerticeCount / (float)upperSideVertices.Count;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,7 +14,7 @@ public class TouchController : MonoBehaviour
     public UnityEvent onEndTouchEvent;
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        
         if (Instance != null)
         {
             Destroy(this);

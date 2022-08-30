@@ -25,6 +25,10 @@ public class WaxRemover : MonoBehaviour
     }
     private void Update()
     {
+        WaxRemove();
+    }
+    private void WaxRemove()
+    {
         if (canDetect)
         {
             if (Input.GetMouseButtonDown(0))
@@ -41,10 +45,10 @@ public class WaxRemover : MonoBehaviour
                 CheckIsRemoved();
             }
             rotationValue = (horizontal * 100);
-           
+
             foreach (Material mat in bendingMats)
             {
-                mat.SetFloat("_RotationRate", Mathf.Clamp(rotationValue,-50,0f));
+                mat.SetFloat("_RotationRate", Mathf.Clamp(rotationValue, -50, 0f));
             }
         }
         if (lastMove)
